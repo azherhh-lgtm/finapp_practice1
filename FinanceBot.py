@@ -4,8 +4,8 @@
 
 from mistralai import Mistral
 
-# ⚠️ Replace with your actual API key (not safe for sharing or production)
-API_KEY = "PbgP4pXMIw3pnp0BuNKypaOjRgPiwznk"
+# Replace with your actual API key (not safe for sharing or production)
+API_KEY = "NT55ZwCmmmuugK0WyIVsIXsMfNGi5Ju7"
 
 client = Mistral(api_key=API_KEY)
 MODEL = "mistral-large-latest"
@@ -27,12 +27,13 @@ def chat_once(user_message: str) -> str:
     return resp.choices[0].message.content
 
 if __name__ == "__main__":
-    print("Financial Bot 💰 (type 'exit' to quit)\n")
+    print("Financial Bot (type 'exit' to quit)\n")
     while True:
         msg = input("You: ").strip()
         if msg.lower() in {"exit", "quit"}:
             break
         answer = chat_once(msg)
         print("Bot:", answer, "\n")
+
 
 
